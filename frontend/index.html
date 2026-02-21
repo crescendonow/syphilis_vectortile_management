@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="th" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syphilis — Vector Tile Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['IBM Plex Sans Thai','system-ui'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans h-screen flex overflow-hidden">
+
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="w-52 flex-shrink-0 bg-slate-900 border-r border-slate-800 flex flex-col">
+  <div class="p-4 border-b border-slate-800">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm">S</div>
+      <div><div class="font-bold text-sm text-white">Syphilis</div><div class="text-[10px] font-mono text-slate-500">Vector Tile Manager v2026.1</div></div>
+    </div>
+  </div>
+  <nav class="flex-1 p-2 space-y-0.5" id="navContainer"></nav>
+  <div class="p-3 border-t border-slate-800 text-[11px] font-mono text-slate-600">
+    <div class="flex items-center gap-1.5"><span id="dbDot" class="w-2 h-2 rounded-full bg-emerald-500"></span><span id="dbTxt">Connected</span></div>
+    <div class="mt-1 truncate" id="dbName">vallaris_feature</div>
+  </div>
+</aside>
+
+<!-- ═══ MAIN ═══ -->
+<main class="flex-1 overflow-auto" id="mainContent"></main>
+
+<!-- ═══ TOAST ═══ -->
+<div id="toastBox" class="fixed bottom-5 right-5 z-[100] space-y-2"></div>
+
+<!-- ═══ MODAL CONTAINER ═══ -->
+<div id="modalOverlay" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm" onclick="closeModal()">
+  <div id="modalContent" class="bg-slate-900 border border-slate-700 rounded-xl max-h-[88vh] overflow-auto p-6 fade-in" onclick="event.stopPropagation()" style="min-width:480px"></div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

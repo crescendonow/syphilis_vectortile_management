@@ -1,0 +1,75 @@
+/* ══════════════════════════════════
+   Syphilis — Custom Styles
+   Base: Tailwind CDN + MapLibre GL
+   ══════════════════════════════════ */
+
+[x-cloak] { display: none !important; }
+
+/* ── Animations ── */
+.fade-in {
+  animation: fi 0.2s ease-out;
+}
+@keyframes fi {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.toast {
+  animation: su 0.3s ease-out;
+}
+@keyframes su {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Sidebar ── */
+.sb-item {
+  transition: all 0.15s;
+}
+.sb-item:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+.sb-item.active {
+  background: rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+  border-left: 3px solid #3b82f6;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+/* ── MapLibre ── */
+.maplibregl-canvas {
+  outline: none;
+}
+
+/* ── Chips (tag selectors) ── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1px solid transparent;
+}
+.chip:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+.chip.selected {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #60a5fa;
+}
