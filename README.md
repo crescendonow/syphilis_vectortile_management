@@ -1,6 +1,3 @@
-# syphilis_vectortile_management
-application for generate and Vector Tile Management 
-
 # Syphilis — Vector Tile & Style Manager
 
 ระบบจัดการ Vector Tiles และ Map Styles สำหรับ PWA GIS Online  
